@@ -1,4 +1,5 @@
 import "./globals.css";
+import { neobrutalism } from "@clerk/themes";
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 
@@ -30,7 +31,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: neobrutalism,
+      }}
+    >
       <html lang="en">
         <body
           className={`${inter.variable} ${robotoMono.variable} antialiased`}
