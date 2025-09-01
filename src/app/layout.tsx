@@ -36,8 +36,6 @@ export default function RootLayout({
       appearance={{
         baseTheme: neobrutalism,
       }}
-      signInForceRedirectUrl="/"
-      signUpForceRedirectUrl="/"
     >
       <html lang="en">
         <body
