@@ -14,7 +14,6 @@ export default function Page() {
             dividerText: 'text-400',
           },
           variables: {
-            colorPrimary: '#6366f1',
             borderRadius: '1rem',
           },
         }}
