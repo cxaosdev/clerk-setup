@@ -1,4 +1,5 @@
 import "./globals.css";
+import Link from "next/link";
 import { neobrutalism } from "@clerk/themes";
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
@@ -35,19 +36,28 @@ export default function RootLayout({
       appearance={{
         baseTheme: neobrutalism,
       }}
+      signInForceRedirectUrl="/"
+      signUpForceRedirectUrl="/"
     >
       <html lang="en">
         <body
           className={`${inter.variable} ${robotoMono.variable} antialiased`}
         >
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+          <header className="h-20 border-b">
+            <div className="w-full h-full flex items-center justify-between px-8">
+              <Link href="/" className="font-bold text-3xl">
+                Clerk Setup
+              </Link>
+              <div className="flex items-center gap-4">
+                <SignedOut>
+                  <SignInButton></SignInButton>
+                  <SignUpButton></SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton/>
+                </SignedIn>
+              </div>
+            </div>
           </header>
           {children}
         </body>
